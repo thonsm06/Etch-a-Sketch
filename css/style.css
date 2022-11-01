@@ -2,6 +2,7 @@
 body {
     background-color: rgb(35, 35, 46);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100vw;
@@ -14,7 +15,10 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 500px;
-    height: 500px;
+    width: 700px;
+    height: 700px;
 }
 
+.colored {
+    background-color: black;
+}
