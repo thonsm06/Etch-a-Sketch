@@ -16,14 +16,18 @@ function generateGrid(numOfCell){
         const grid = document.createElement('div');
         grid.classList.add('content');
         grid.style.cssText = `background-color: grey; width: ${cellSize}px; height: ${cellSize}px; border-style: solid; border-color: white; border-width: 1px;`;
+        
         container.appendChild(grid);  
     }
-
+    const grids = document.querySelectorAll('.content');
+    grids.forEach(grid => grid.addEventListener('mousedown', drawing));
 }
+
+
 const container = document.querySelector('.container');
 container.addEventListener('mousedown', function() {
     const grids = document.querySelectorAll('.content');
-    grids.forEach(grid => grid.addEventListener('mouseenter', drawing))
+    grids.forEach(grid => grid.addEventListener('mouseenter', drawing));
 })
 document.addEventListener('mouseup', function(){
     const grids = document.querySelectorAll('.content');
@@ -34,7 +38,7 @@ function drawing(e){
     this.style.backgroundColor = 'black';
 }
 
-const changeSize = document.querySelector('button');
+const changeSize = document.querySelector('button'); //change number of cell
 changeSize.addEventListener('click', function () {
     let numOfCell = prompt("Enter number of cell");
     let numOfSide;
