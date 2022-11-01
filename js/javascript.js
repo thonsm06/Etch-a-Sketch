@@ -1,20 +1,18 @@
 generateGrid();
 function generateGrid(){
     const container = document.querySelector('.container');
-    container.style.width = "320px";
-    container.style.height = "320px";
-    container.style.display = "flex";
-    container.style.flexDirection = "row";
-    container.style.flexWrap = 'wrap';
-
-    for(let i = 0; i < 256; i++)
+    const containerSize = container.style.width;
+    console.log(containerSize);
+    let numOfSide = 60;
+    let cellSize = (500-(numOfSide*2))/numOfSide;
+    for(let i = 0; i < numOfSide*numOfSide; i++)
     {
         const grid = document.createElement('div');
         grid.classList.add('content');
-        grid.style.backgroundColor = 'red';
-        grid.style.cssText = "background-color: pink; width: 20px; height: 20px; border-style: solid; border-color: black; border-width: 1px;";
+        grid.style.cssText = `background-color: white; width: ${cellSize}px; height: ${cellSize}px; border-style: solid; border-color: black; border-width: 1px;`;
         container.appendChild(grid);  
     }
+
 }
 
 const grids = document.querySelectorAll('.content')
