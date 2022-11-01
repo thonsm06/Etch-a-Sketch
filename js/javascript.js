@@ -23,7 +23,6 @@ function generateGrid(numOfCell){
     grids.forEach(grid => grid.addEventListener('mousedown', drawing));
 }
 
-
 const container = document.querySelector('.container');
 container.addEventListener('mousedown', function() {
     const grids = document.querySelectorAll('.content');
@@ -56,10 +55,3 @@ function checkCell(){
         generateGrid(numOfCell);
     }
 };
-
-/*
-if mouse is down inside of a square, change the color of that square.
-if mouse is still down and move to another square, change the color of the new square.
-
-
-*/
