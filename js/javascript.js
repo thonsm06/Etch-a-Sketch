@@ -39,20 +39,23 @@ function drawing(e){
 }
 
 const changeSize = document.querySelector('button'); //change number of cell
-changeSize.addEventListener('click', function () {
+changeSize.addEventListener('click', checkCell);
+
+function checkCell(){
     let numOfCell = prompt("Enter number of cell");
-    let numOfSide;
     if (numOfCell == null || numOfCell == "")
     {
         return;
+    }
+    else if (numOfCell > 100)
+    {
+        checkCell();
     }
     else
     {
         generateGrid(numOfCell);
     }
-});
-
-
+};
 
 /*
 if mouse is down inside of a square, change the color of that square.
