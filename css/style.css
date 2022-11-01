@@ -5,8 +5,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /*
     width: 100vw;
     height: 100vh;
+    */
 }
 .container{
     background-color: black;
@@ -21,4 +23,8 @@ body {
 
 .colored {
     background-color: black;
+}
+
+button {
+    margin: 50px;
 }
