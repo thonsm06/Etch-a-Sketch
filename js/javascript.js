@@ -1,3 +1,4 @@
+let color = 'black';
 
 window.addEventListener('DOMContentLoaded', function () { //initial grid at start
     generateGrid(10);
@@ -34,7 +35,7 @@ document.addEventListener('mouseup', function(){
 })
 
 function drawing(e){
-    this.style.backgroundColor = 'black';
+    this.style.backgroundColor = color;
 }
 
 const changeSize = document.querySelector('button'); //change number of cell
@@ -55,3 +56,22 @@ function checkCell(){
         generateGrid(numOfCell);
     }
 };
+
+const colorParent = document.querySelector('.color');
+const colorBox = document.createElement('colorBox');
+colorBox.classList.add('colorBox');
+colorBox.style.cssText = `width: 64px; height: 64px; background-color: ${color};`;
+colorParent.appendChild(colorBox);
+
+
+const colorInput = document.querySelector('.changeColor');
+colorInput.addEventListener('mousedown', randomColor);
+function randomColor(){
+    const r = Math.floor(Math.random()*256);
+    const g = Math.floor(Math.random()*256);
+    const b = Math.floor(Math.random()*256);
+    console.log(r);
+    color = `rgb(${r}, ${g}, ${b})`;
+    colorBox.style.backgroundColor = color;
+    
+}

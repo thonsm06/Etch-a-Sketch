@@ -20,11 +20,15 @@ body {
     width: 700px;
     height: 700px;
 }
-
+.color{
+    display: flex;
+    flex-direction: row;
+}
+/*
 .colored {
     background-color: black;
 }
-
+*/
 button {
     margin: 50px;
 }
